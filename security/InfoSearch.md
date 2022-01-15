@@ -153,6 +153,4 @@ hydra
 
 2. ### 明文口令
 
-![](/Users/hunter/Desktop/book/安全/qrcode.jpg)
-
-
+![](/Users/hunter/Desktop/book/notes_everything/assets/qrcode.jpg)
