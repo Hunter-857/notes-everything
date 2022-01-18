@@ -88,13 +88,50 @@ Nmap 的用途:
 nmap 
 ```
 
-### NC 扫描端口
+### NETCAT - NC
 
-    又被称是: 瑞士军刀
+  又被称是: 瑞士军刀,身材小巧,功能强大。它是一个可靠的容易被其他程序所启用的后台操作工具，同时它也被用作网络的测试工具或黑客工具。 使用它你可以轻易的建立任何连接。内建有很多实用的工具。使用UDP和TCP协议。
 
-    用途:
+用法:
 
-   用法:
+```
+# 查看帮助文档如果忘记了命令
+nc -h
+# 详细的命令信息
+man n
+```
+
+smtp 邮件服务器.
+
+
+
+```
+ #nc Telnet/Banner
+ nc -nv ip port
+ #扫描 一定范围内的端口
+ nc -nvz ip  1-2048  # tcp 协议
+ nc -nvzu ip  1-2048 # upd 协议
+ # exmaple
+ nc -vn 192.168.1.2 80 # 80 http端口
+ nc -nv 192.168.1.2 110 # 110 邮件端口
+ nc -nv 192.168.1.2 20
+```
+
+
+
+```
+# nc 文本传输
+Server A : nc -l --4444  # 打开监听 端口
+Server B : nc -nv 1.1.1.1 4444 # 另外一台电脑 连接端口
+```
+
+
+
+
+```
+# 也可以传输文件, 多个文件也可以通过压缩来传递
+
+```
 
 远程连接到上代理/ 肉鸡  通过 别人对目标机 进行扫描.
 
@@ -153,4 +190,21 @@ hydra
 
 2. ### 明文口令
 
-![](/Users/hunter/Desktop/book/notes_everything/assets/qrcode.jpg)
+## metasploitable安装与入侵
+
+M0n0wall 防火墙
+
+[m0n0wall - Downloads](https://m0n0.ch/wall/downloads.php)
+
+Pfsense 背靠背防火墙
+
+  https://www.pfsense.org/
+
+网络配置使用到的命令
+
+```
+dhclinet eht0
+ifconfig eht0 192.168.1.11/24
+route add default gw 192.168.1.1
+echo  nameserver 192.168.1.1 > /etc/resolv.conf
+```
