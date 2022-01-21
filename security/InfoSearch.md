@@ -144,14 +144,35 @@ Nmap 的用途:
 常用的命令:
 
 ```shell
-nmap 
+nmap -sA ip
+
+nmap -sL ip   
+
+nmap  -sS
+
+nmap  -sT
+
+nmap  -sU
 ```
+
+### arp
+
+arp-scan 回应和内置网络,向目标发送arp的package
+
+```
+# 扫描 eth0 上连接的设备
+arp-scan --interface=eth0 --localnet
+```
+
+awvs
+
+nexus
+
+御剑
 
 ### NETCAT - NC
 
   又被称是: 瑞士军刀,身材小巧,功能强大。它是一个可靠的容易被其他程序所启用的后台操作工具，同时它也被用作网络的测试工具或黑客工具。 使用它你可以轻易的建立任何连接。内建有很多实用的工具。使用UDP和TCP协议。
-
-用法:
 
 ```
 # 查看帮助文档如果忘记了命令
@@ -176,10 +197,15 @@ man n
 # nc 文本传输
 Server A : nc -l --4444  # 打开监听 端口
 Server B : nc -nv 1.1.1.1 4444 # 另外一台电脑 连接端口
-```
 
-```
-# 也可以传输文件, 多个文件也可以通过压缩来传递
+# 在A上发送, 可以传输文件, 多个文件也可以通过压缩来传递
+Server A : nc -ip 333 >1.mp4   # file name
+#  另外一台电脑B 上接收
+Server B : nc -nv 1.1.1.1 333 < 1.mp4 -q 1 
+
+#甚至可以克隆 整个硬盘
+nc -lp 333 | dd of=/dev/sda # 硬盘搞成输出流
+dd if=/dev/sda | nc -nv 1.1.1.1 333 -q l # 读入标准流
 ```
 
 远程连接到上代理/ 肉鸡  通过 别人对目标机 进行扫描.
@@ -234,15 +260,17 @@ Ettercap 工具
 
 ## 口令安全
 
-
-
 ### 弱口令
 
 可以根据个人信息来生成一些密码
 
 [GitHub - Mebus/cupp: Common User Passwords Profiler (CUPP)](https://github.com/Mebus/cupp)
 
-​  hydra 工具是一种常见的暴力破解工具.它利用的是一些密码字典,社工字典,字符集字典,常用字字典.
+​ Regcon NG 信息收集工具
+
+exif 图片信息收集
+
+hydra 工具是一种常见的暴力破解工具.它利用的是一些密码字典,社工字典,字符集字典,常用字字典.
 
 用法: 
 
