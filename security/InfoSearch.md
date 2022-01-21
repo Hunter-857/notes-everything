@@ -1,30 +1,89 @@
 # 信息收集
 
-## Kail 命令
+http://www.cyc2018.xyz/
 
-kail 是linux 的一个版本所以熟悉linux 命令也会熟悉Linux命令.
+## DNS 信息收集
 
-查看DNS 信息
+### 域名和FQDN
 
-1. nslookup  
+域名记录: A类, C类, name, NS, MX, ptr(通过IP 反向解析域名) 
 
-2. dig 
+1. A Record
+   These records resolve to IPv4 addresses, for example 104.26.10.229  
 
-3. whois  命令 or 网站
+2. AAAA Record
+   These records resolve to IPv6 addresses, for example 2606:4700:20::681a:be5
+
+3. CName Record
+    These records resolve to another domain name, for example, TryHackMe's online shop has the subdomain name store.tryhackme.com which returns a CNAME record shops.shopify.com. Another DNS request would then be made to shops.shopify.com to work out the IP address.
+
+4. MX Record
+   These records resolve to the address of the servers that handle the email for the domain you are querying, for example an MX record response for tryhackme.com would look something like alt1.aspmx.l.google.com. These records also come with a priority flag. This tells the client in which order to try the servers, this is perfect for if the main server goes down and email needs to be sent to a backup server.
+
+5. TXT Record
+     TXT records are free text fields where any text-based data can be stored. TXT records have multiple uses, but some common ones can be to list servers that have the authority to send an email on behalf of the domain (this can help in the battle against spam and spoofed email). They can also be used to verify ownership of the domain name when signing up for third party services.
+
+DNS AXFR 协议(https://www.netsh.me/article/computer/dns/1151.html)
+
+1. 连接域名解析的过程
    
-   ```shell
-   whois xuegod.cn
+   ```
+       nslookup  www.baidu.com
+       # 设置查询的类型
+       set type 
+   ```
+
+2. dig命令
+   
+   ```
+   # dig 也可以反向查询 , 查询到 PTR 记录
+    dig sina.com ns axfr
+    or
+    host -T -l sina.com ns 
    ```
    
-   cdn
+   DNS区域传输
    
-   ```shell
-   traceroute  www.baidu.com 
-   # 打印了从本地到 www.baidu.com ,整个网络经过的路由情况
-   # 显示内容里会有一些 *** 表示设备隐藏了
+   ```
+    # 对目标的DNS,服务器进行区域传输.
+    dig @nsl.example.com
    ```
    
-   Hping3 ,Fping 命令
+   ```shell
+    # 打印了从本地到 www.baidu.com ,整个网络经过的路由情况
+    traceroute  www.baidu.com 
+    # 显示内容里会有一些 *** 表示设备隐藏了
+   ```
+
+### DNS字典爆破
+
+   通过字典来 破解, 一个域名下的主机,和子域名
+
+```shell
+  # 查看 help 文档
+    dnsdict -h
+
+  #
+    dnsdict  -d4 -tl 16 -x baidu.com
+
+  #
+    dnsmap 
+  #
+    dnsrecon
+```
+
+### DNS注册信息
+
+  whois信息查询
+
+```
+whois baidu.com
+```
+
+ or 通过网站查询who is 信息: 
+       [域名Whois查询 - 站长之家](https://whois.chinaz.com/)     [全球Whois 查询](https://www.whois365.com/cn/)
+
+Hping3 ,Fping 命令
 
 Meltgo 收集子域名信息
 
@@ -50,15 +109,15 @@ Google hacking 语法
 
 漏洞如何利用暂时还不会,呵呵.
 
-- 美国著名安全公司：Exploit Database   https://www.exploit-db.com/
+- 美国著名安全公司：Exploit Database https://www.exploit-db.com/
 
-- 赛门铁克：  https://www.securityfocus.com
+- 赛门铁克： https://www.securityfocus.com
 
 - 国家信息安全漏洞共享平台： https://www.cnvd.org.cn
 
 - 国内安全厂商--绿盟科技： http://www.nsfocus.net
 
-- 安全客： https://www.anquanke.com/
+- 安全客： [安全客 - 安全资讯平台](https://www.anquanke.com/)
 
 - 知道创宇漏洞库： https://www.seebug.org
 
@@ -101,10 +160,6 @@ nc -h
 man n
 ```
 
-smtp 邮件服务器.
-
-
-
 ```
  #nc Telnet/Banner
  nc -nv ip port
@@ -117,29 +172,32 @@ smtp 邮件服务器.
  nc -nv 192.168.1.2 20
 ```
 
-
-
 ```
 # nc 文本传输
 Server A : nc -l --4444  # 打开监听 端口
 Server B : nc -nv 1.1.1.1 4444 # 另外一台电脑 连接端口
 ```
 
-
-
-
 ```
 # 也可以传输文件, 多个文件也可以通过压缩来传递
-
 ```
 
 远程连接到上代理/ 肉鸡  通过 别人对目标机 进行扫描.
+
+## TCPDUMP
+
+抓包命令
+
+```
+# -i 抓eth0  -s 指定大小  -w 指定文件
+tcpdump -i eth0 -s 0  -w a.cap
+```
 
 ## Dos 命令:
 
 ​ dos 命令是一般是指windows 系统下的命令
 
- Dos 命令:
+Dos 命令:
 
 ```shell
 net use
@@ -154,7 +212,7 @@ net time
 远程连接 一台电脑 :
 
 ```js
-        mstsc  -v   ip
+ mstsc  -v   ip
 ```
 
 Window 下好用 的工具 御剑
@@ -176,14 +234,20 @@ Ettercap 工具
 
 ## 口令安全
 
+
+
 ### 弱口令
+
+可以根据个人信息来生成一些密码
+
+[GitHub - Mebus/cupp: Common User Passwords Profiler (CUPP)](https://github.com/Mebus/cupp)
 
 ​  hydra 工具是一种常见的暴力破解工具.它利用的是一些密码字典,社工字典,字符集字典,常用字字典.
 
 用法: 
 
 ```shell
-hydra
+    hydra
 ```
 
 1. ### 默认口令
@@ -203,8 +267,9 @@ Pfsense 背靠背防火墙
 网络配置使用到的命令
 
 ```
-dhclinet eht0
-ifconfig eht0 192.168.1.11/24
-route add default gw 192.168.1.1
-echo  nameserver 192.168.1.1 > /etc/resolv.conf
+  dhclinet eht0
+
+  ifconfig eht0 192.168.1.11/24
+  route add default gw 192.168.1.1
+  echo  nameserver 192.168.1.1 > /etc/resolv.conf
 ```
