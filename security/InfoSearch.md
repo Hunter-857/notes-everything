@@ -1,26 +1,33 @@
 # 信息收集
 
-http://www.cyc2018.xyz/
-
 ## DNS 信息收集
+
+这里需要了解各种传输协议,协议的作用方便之后的信息解析
 
 ### 域名和FQDN
 
-域名记录: A类, C类, name, NS, MX, ptr(通过IP 反向解析域名) 
+域名记录: A类, C类, cname, NS, MX, ptr(通过IP 反向解析域名) 
 
 1. A Record
-   These records resolve to IPv4 addresses, for example 104.26.10.229  
+   
+   A 类信息记录的IPV4 地址, 如:104.26.10.229
 
 2. AAAA Record
-   These records resolve to IPv6 addresses, for example 2606:4700:20::681a:be5
+   
+   4A类信息则是记录了IPV6 地址 如:2606:4700:20::681a:be5
+   
+   随着移动互联网的发展联网设备越来越多, IPv4 的地址用完了,现在已经逐步转向IPV6
 
 3. CName Record
     These records resolve to another domain name, for example, TryHackMe's online shop has the subdomain name store.tryhackme.com which returns a CNAME record shops.shopify.com. Another DNS request would then be made to shops.shopify.com to work out the IP address.
 
 4. MX Record
+   
+   MX记录了地址服务器
    These records resolve to the address of the servers that handle the email for the domain you are querying, for example an MX record response for tryhackme.com would look something like alt1.aspmx.l.google.com. These records also come with a priority flag. This tells the client in which order to try the servers, this is perfect for if the main server goes down and email needs to be sent to a backup server.
 
 5. TXT Record
+   
      TXT records are free text fields where any text-based data can be stored. TXT records have multiple uses, but some common ones can be to list servers that have the authority to send an email on behalf of the domain (this can help in the battle against spam and spoofed email). They can also be used to verify ownership of the domain name when signing up for third party services.
 
 DNS AXFR 协议(https://www.netsh.me/article/computer/dns/1151.html)
@@ -301,3 +308,31 @@ Pfsense 背靠背防火墙
   route add default gw 192.168.1.1
   echo  nameserver 192.168.1.1 > /etc/resolv.conf
 ```
+
+[mac 下安装adb命令_徐代龙的技术专栏-CSDN博客_mac安装adb命令](https://blog.csdn.net/xudailong_blog/article/details/109910199)
+
+[解决adb connect 连接Android设备报错：由于目标计算机积极拒绝，无法连接 - JavaShuo](http://www.javashuo.com/article/p-aexflyur-pd.html)
+
+就是说第一次连接电脑时候
+
+第二次的时候就不用了
+
+有没有什么办法让他直接连接不需要 USB确认?
+
+./adb connect 192.168.1.4:5555
+
+adb 命令
+
+```
+adb pull /sdcard/crime.apk 
+```
+
+- 如果想要把电脑中的文件拷贝到手机里面，使用**adb push <local> <remote>** 命令：
+
+```
+adb push crime.apk /sdcard/data/data
+```
+
+有没有什么办法让他直接连接不需要 USB确认?
+
+./adb connect 192.168.1.4:5555
