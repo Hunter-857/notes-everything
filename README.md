@@ -18,4 +18,4 @@
 
     大家随缘
 
-<img title="" src="file:///Users/hunter/Desktop/book/notes_everything/assets/qrcode.jpg" alt="img" width="164" data-align="inline">
+![公众号](assets/qrcode.jpg)

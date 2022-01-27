@@ -336,3 +336,6 @@ adb push crime.apk /sdcard/data/data
 有没有什么办法让他直接连接不需要 USB确认?
 
 ./adb connect 192.168.1.4:5555
+
+git remote add origin https://github.com/big-hunter/notes-everything.git
+git push -u origin main

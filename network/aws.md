@@ -9,5 +9,3 @@ AWS
 第三步 terrform
 
     https://www.terraform.io/ 
-
-
