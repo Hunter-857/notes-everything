@@ -6,19 +6,17 @@
 
 Application
 
-Transport ( tcp/ip  or udp )
-
-Network
-
-![network4](../assets/network4.png)
+Transport ( tcp/ip or udp )
 
 Network 层
 
-### TCP 3 次握手 建立tcp连接,
+连接层
 
-192.168.1.2:8080 其中IP 指出了电脑, Port 指出那个application
+7层协议模型与4层的对照关系
 
-路由器  上也会有一些 ip sending的 pattern ,来匹配发送的地方
+![network7](../assets/network7to4.png)
+
+![network4](../assets/network4.png)
 
 ### IP The Internet Protocol (IP)
 
@@ -28,7 +26,27 @@ Network 层
 
 Ip 层数据包的形式
 
-IP 的格式 
+IP 地址的编址方式经历了三个历史阶段：
+
+- 分类
+- 子网划分
+- 无分类
+
+#### 分类
+
+由两部分组成，网络号和主机号，其中不同分类具有不同的网络号长度，并且是固定的。
+
+IP 地址 ::= {< 网络号 >, < 主机号 >}
+IP 的格式
+
+| A类地址 A | 0.0.0.0 |  125.0.0.1 |
+| --------- | ------- | -------- |
+| A类地址   | 0.0.0.0 | asdfasdf |
+| B类地址   | 0.0.0.0 |          |
+| C类地址   | 0.0.0.0 |          |
+| D类地址   |         |          |
+
+
 
 IPV4  地址 0~255 ,不够用了 . 之后采用了NAT 转换技术.
 
@@ -40,12 +58,16 @@ IPV4  地址 0~255 ,不够用了 . 之后采用了NAT 转换技术.
 
 16进制 大端与小端 ,不同的系统架构 会有不同的选择
 
-CIDR
+#### 无分类 CIDR
 
 路由器 匹配算法 longest prefix match
 路由器 会记录下 一个 forwarding table
 
 Forwarding table is a set to CIDR
+
+可以通过 TTL 的值来判断, 2个设备之前有多少设备.
+
+IP 分片  <https://www.bilibili.com/video/BV1B5411h7t4?p=7&spm_id_from=pageDriver>
 
 ### NAT (network address translate)
 
@@ -59,7 +81,7 @@ NAT 服务器 [网络地址转换（NAT）的原理与配置](https://blog.51cto
 
 工具:   [kali工具 recon-ng 的被动信息搜集_twowords的博客-CSDN博客](https://blog.csdn.net/Jaasenyi/article/details/107173402)
 
-RTP 协议 https://blog.csdn.net/bripengandre/article/details/2238818
+RTP 协议 <https://blog.csdn.net/bripengandre/article/details/2238818>
 
 wild cards  通配符
 
@@ -91,3 +113,12 @@ assembly code
 encapsulate
 
 representation big endian or little endian
+
+```
+export ANT_HOME=/Users/hunter/Documents/drawIO/ant
+export PATH=${PATH}:${ANT_HOME}/bin
+```
+
+```
+docker build -t draw_io:v1.0 -f ./Dockerfile 
+```
