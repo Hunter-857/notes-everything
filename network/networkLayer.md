@@ -47,7 +47,6 @@ IP 的格式
 | D类地址   |         |          |
 
 
-
 IPV4  地址 0~255 ,不够用了 . 之后采用了NAT 转换技术.
 
 最终走向IPV6
@@ -69,19 +68,45 @@ Forwarding table is a set to CIDR
 
 IP 分片  <https://www.bilibili.com/video/BV1B5411h7t4?p=7&spm_id_from=pageDriver>
 
-### NAT (network address translate)
-
-NAT 服务器 [网络地址转换（NAT）的原理与配置](https://blog.51cto.com/yangshufan/1959448)
-
 ### ARP(address Resolution Protocol)
 
 网络层协议, 可以发现 连接地址关联 网络地址 , 它直接连接了
 
 网卡(ethernet card) 会有自己的硬件编码
+硬件mac码
+
+
+
+
+### NAT (network address translate)
+
+NAT 服务器 [网络地址转换（NAT）的原理与配置](https://blog.51cto.com/yangshufan/1959448)
+
+
 
 工具:   [kali工具 recon-ng 的被动信息搜集_twowords的博客-CSDN博客](https://blog.csdn.net/Jaasenyi/article/details/107173402)
 
 RTP 协议 <https://blog.csdn.net/bripengandre/article/details/2238818>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 wild cards  通配符
 
@@ -113,6 +138,7 @@ assembly code
 encapsulate
 
 representation big endian or little endian
+
 
 ```
 export ANT_HOME=/Users/hunter/Documents/drawIO/ant

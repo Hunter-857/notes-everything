@@ -6,6 +6,6 @@ AWS
 
 第二步 ADFS
 
-第三步 terrform
+第三步 terrform   https://www.terraform.io/ 
 
-    https://www.terraform.io/ 
+
