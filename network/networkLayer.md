@@ -41,7 +41,7 @@ IP 的格式
 
 | A类地址 A | 0.0.0.0 |  125.0.0.1 |
 | --------- | ------- | -------- |
-| A类地址   | 0.0.0.0 | asdfasdf |
+| A类地址   | 0.0.0.0 |           |
 | B类地址   | 0.0.0.0 |          |
 | C类地址   | 0.0.0.0 |          |
 | D类地址   |         |          |
@@ -50,9 +50,9 @@ IP 的格式
 IPV4  地址 0~255 ,不够用了 . 之后采用了NAT 转换技术.
 
 最终走向IPV6
-
+网络地址 和 设备地址
 #### 子网掩码/子网划分
-
+根据子网掩码, 确定那个是网络地址 ,那个是设备地址.
 255.255.255.0  代表IP 的前3位都在同一个网路里.
 
 16进制 大端与小端 ,不同的系统架构 会有不同的选择
@@ -71,11 +71,8 @@ IP 分片  <https://www.bilibili.com/video/BV1B5411h7t4?p=7&spm_id_from=pageDriv
 ### ARP(address Resolution Protocol)
 
 网络层协议, 可以发现 连接地址关联 网络地址 , 它直接连接了
-
-网卡(ethernet card) 会有自己的硬件编码
+网卡地址(ethernet card address)  48 bit的16进制数字 e.g 9.9.9.9
 硬件mac码
-
-
 
 
 ### NAT (network address translate)
@@ -90,6 +87,8 @@ RTP 协议 <https://blog.csdn.net/bripengandre/article/details/2238818>
 
 
 
+### 无线网络
+802.11 标准
 
 
 
@@ -105,9 +104,9 @@ RTP 协议 <https://blog.csdn.net/bripengandre/article/details/2238818>
 
 
 
-
-
-
+hypothetical   假想的
+hypothetically 假想滴
+decoupled with  解偶
 wild cards  通配符
 
 partial           部分的
