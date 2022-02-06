@@ -2,6 +2,32 @@ Metasploit
 
 Metasploit是一个渗透测试漏洞,是你能够查找利用和验证漏洞.
 
+infamouse dread pirate 
+fraudulent activity
+mobile trail 
+## ways of to be anonymous at intenet
+1. acquiring the hacking machine uesed to fradulent offensive activities 也就是拿到肉鸡
+2. buy a laptop which in a privacy focused crypto currency, install a liveOS which will no permanent Storage 
+   also make sure full disk encryption 
+   https://tails.boum.org/   保护隐私的linux 系统
+   ip link -v show  # 显示硬件信息, 通过一些程序修改
+   VPN 代理,等方式隐藏IP
+   # 在这里设置一些代理 or 洋葱浏览器
+   vi /etc/proxychains4.conf 
+   tor start 
+   proxychains firefox www.baidu.com
+3. DNScat 修DNS  https://github.com/iagox86/dnscat2
+
+## Social Engineer
+一个简单的抓到别人位置的方法.
+get you location by Sample Social Engineer
+1. 网络抓包, 得到IP得到大概位置
+2. GSP信息,通过钓鱼网站 : https://github.com/thewhiteh4t/seeker , 这样就可以知道一个人所在的经度和纬度.
+
+
+https://jubt.live/cn/index.html
+
+
 
 [Chorme 应用](https://developer.chrome.com/docs/apps/)
 
@@ -37,4 +63,4 @@ manifest 里的一些基本属性:
             }
         ```
     
-mac在打包时要给浏览器,磁盘访问权限. 这样就打包crx, perm.
+tips: mac在打包时要给浏览器,磁盘访问权限. 这样就打包crx, perm.
