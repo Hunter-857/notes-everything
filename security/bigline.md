@@ -12,3 +12,9 @@ Security e-book :https://github.com/Hack-with-Github/Free-Security-eBooks
 | 苹果         | https://support.apple.com/en-us/HT201220 | 若是可以在这里题几个漏洞,以后就有饭吃了 |
 | 华为         | https://bugbounty.huawei.com/hbp/#/home  | 主要都是华为市场里的app                 |
 | 深信服       | https://security.sangfor.com.cn/         |  传统安全企业                      |
+
+
+# tips
+https://github.com/Vancir/365-days-get-xuanwulab-job
+
+暂时还没有能看的懂: 
