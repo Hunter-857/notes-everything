@@ -1,18 +1,19 @@
 Metasploit
 
 Metasploit是一个渗透测试漏洞,是你能够查找利用和验证漏洞.
-
 infamouse dread pirate 
 fraudulent activity
 mobile trail 
+
 ## ways of to be anonymous at intenet
 1. acquiring the hacking machine uesed to fradulent offensive activities 也就是拿到肉鸡
-2. buy a laptop which in a privacy focused crypto currency, install a liveOS which will no permanent Storage 
+2. buy a laptop which in a privacy focused crypto currency,     install a liveOS which will no permanent Storage 
    also make sure full disk encryption 
    https://tails.boum.org/   保护隐私的linux 系统
    ip link -v show  # 显示硬件信息, 通过一些程序修改
    VPN 代理,等方式隐藏IP
-   # 在这里设置一些代理 or 洋葱浏览器
+
+  在这里设置一些代理 or 洋葱浏览器
    vi /etc/proxychains4.conf 
    tor start 
    proxychains firefox www.baidu.com

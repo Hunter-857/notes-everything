@@ -1,5 +1,4 @@
-# Study 
-:stuck_out_tongue: 
+# Study  :stuck_out_tongue: 
 Security e-book :https://github.com/Hack-with-Github/Free-Security-eBooks
 
 # Security boundce
@@ -15,6 +14,9 @@ Security e-book :https://github.com/Hack-with-Github/Free-Security-eBooks
 
 
 # tips
-https://github.com/Vancir/365-days-get-xuanwulab-job
+https://evilcos.me/security_skill_tree_basic/index.html
 
-暂时还没有能看的懂: 
+暂时还没有能看的懂: https://github.com/Vancir/365-days-get-xuanwulab-job
+
+## C++ 指导
+http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
