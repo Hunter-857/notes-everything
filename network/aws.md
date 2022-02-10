@@ -11,10 +11,13 @@ https://www.youtube.com/watch?v=SOTamWNgDKc
 
  命令太多记不住,耗头发,使用的时候参考[手册](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html).
  同时也看看了别云服务上,[华为云CLI](https://support.huaweicloud.com/qs-hcli/hcli_02.html),[阿里云CLI](https://help.aliyun.com/product/29991.html) 用法都差不多,看的明白文档才是王道.
+ 之后会存一些常用命令
+
 ## ADFS
 
-  这个其实就是我们自己实现的一个小工具,原理用python 就打开AWS的登陆页面输入账号密码,选择一个IAM账户,
-  之后拿到token信息把aws账户的token写到本地的 ~/.aws/credentials中,大概这个样子
+  这个其实就是我们自己实现的一个小工具,原理用python 就打开AWS的登陆页面输入账号密码,选择一个IAM账户,点击登录.
+  有个你的session之后通过AWS CLI拿到token, 拿到token信息把aws账户的token写到本地的 ~/.aws/credentials中,大概这个样子
+
 
     ```
      [saml]
@@ -26,7 +29,7 @@ https://www.youtube.com/watch?v=SOTamWNgDKc
 
     ```
 
-## terrform   
+## Terrform   
  [官网](https://www.terraform.io/)     
  ### 介绍
  一门脚本语言, 目的是 Infostruct as language(架构作为语言), 简单地说在使用aws的各种组件时一步一步的点击,一步步配置时间久了大家都记不住,所以搞成一些脚本,自己定义比变量,定义组件名字等. 统一管理方便快捷,高端大气有格调.
