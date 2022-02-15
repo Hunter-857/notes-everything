@@ -93,13 +93,9 @@ Network 层
 ### IP编地址
 IP 的长度应该是32bit
 
-二进制形式:
-    
-11001100 11001100 11001100 11001100
+二进制形式: 11001100 11001100 11001100 11001100
 
-为了方便读,记忆写成十进制:
-
-193.32.216.9
+为了方便读,记忆写成十进制: 193.32.216.9
 
 #### 子网(subnet)/子网划分
 
@@ -120,11 +116,14 @@ IP 地址 ::= {< 网络号 >, < 主机号 >}
 例如:
 
 Address1: 
-&nbsp； IP:192.168.0.1 
-    子网掩码 : 255.255.255.0 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP:192.168.0.1 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 子网掩码 : 255.255.255.0 
+
 Address2: 
-    IP:192.168.0.2
-    子网掩码 : 255.255.255.0 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP:192.168.0.2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 子网掩码 : 255.255.255.0 
 
 Address1 和 Address2, ip不同 ,但是子网掩码相同,则表示同一个区域网络里的2个设备. 
 
@@ -166,9 +165,6 @@ IP 地址的编址方式经历了三个历史阶段：
 | E类 以1111开头 | 保留地址             | 240.0.0.0~255.255.255.255 |
 
 
-IPV4  地址 0~255 ,不够用了 . 之后采用了NAT 转换技术.
-最终走向IPV6
-
 #### 无分类 CIDR
 classes interdomain routeing, optimze the ip
 Forwarding table is a set to CIDR
@@ -177,6 +173,13 @@ Forwarding table is a set to CIDR
 回环地址
 
 127.0.0.0/8被用作回环地址，回环地址表示本机的地址，常用于对本机的测试，用的最多的是127.0.0.1。
+
+
+IPV4  地址 0~255 ,不够用了 . 之后采用了NAT 转换技术.
+最终走向IPV6
+
+## MAC address 
+mac 地址就是最设备唯一硬件地址
 
 
 ### 路由选择协议
@@ -266,11 +269,3 @@ encapsulate
 representation big endian or little endian
 
 
-```
-export ANT_HOME=/Users/hunter/Documents/drawIO/ant
-export PATH=${PATH}:${ANT_HOME}/bin
-```
-
-```
-docker build -t draw_io:v1.0 -f ./Dockerfile 
-```

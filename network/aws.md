@@ -115,15 +115,30 @@ aws ec2 run-instances --image-id<> -instance-type<>  --security-group-ids<au> --
 ```
 
 ### Security Group and Network ACL
+
 Network ACL (Network Access Control) 在 子网中过滤流量 ,答到访问控制的效果.
+
+需要控制 inbound/outbound 的规则.
+
 Security Group 则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多.
 
 
+### VPC Peering
 
+连接IPV4 ,IPV6 在不同协议下的VPCs.
+可以是同一个 region 下的,
+vpc endpionts
 
-
-tests
-
+aws client vpn
+- Create VPC EndPoint: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h26m41s
+- AWS Client VPN: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h36m55s
+- AWS Site-to-Site VPN: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h39m43s
+- AWS VPN CloudHub: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h41m51s
+- AWS Direct Connect (DX): https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h44m50s
+- AWS Direct Connect Gateway: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h51m31s
+- AWS Transit Gateway: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h54m59s
+- Using IPv6 in a VPC: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h58m54s
+- Create VPC Flow Logs: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=2h04m55s
 
 
 可以配置路由
