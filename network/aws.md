@@ -38,38 +38,32 @@ https://www.youtube.com/watch?v=SOTamWNgDKc
  没什么废话就是,一个地址告诉这东西怎么用:[教程](https://learn.hashicorp.com/collections/terraform/aws-get-started)
 
  大概步骤:
+ 
  ![terraform](../assets/aws_terraform.png)
 
 
 
-## VPC
+## AWS VPC
 https://www.youtube.com/watch?v=g2JOHLHh4rI
-最主要的还是可以看 [官网](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+最主要的还是可以看[官网](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)的文档介绍
 
 在使用VPC 之前,我们需要了解一些基本的网络协议 [IPV4](../network/networkLayer.md) ,不能对地址路由这些东西,一脸懵逼.
+
+
+
+### 概念
+VPC: 是你在AWS的虚拟网络,就像是在aws的虚拟数据中心,它可以分配和隔绝不同云主机. 为你提供整个网络控制权限,包括了IP ,子网划分,route table 和 gateways 配置,之后你就在可以在你的VPC中启动 EC2 实例,云函数,Dynamic DB 等.
 
 VPC的核心内容:
 Region: 是指在页面上选择的地区,香港,华南,华北,纽约什么的都有,我们在一个 Region下可以配置VPC.
 一个Region下可以有多个VPC,也可以只有一个.(这完全和钱有关...)
 在VPC中可以设置私有subnet 或者公共有subnet.
-公网和私网之前要通过路由来通信,需要配置Route map.
-只有公共subnet 才有公网IP ,才能访问外网.
-![VPC](../assets/vpc.png) 
+公网和私网之前要通过路由来通信,需要配置Route map.只有公共subnet 才有公网IP ,才能访问外网.
 也可以是多个 vpc
+![VPC](../assets/vpc.png) 
 
 ### CIDR and subnet:
-
-• A virtual private cloud (VPC) is a virtual network dedicated to your AWS
-account
-Analogous to having your own data center inside AWS
-• It is logically isolated from other virtual networks in the AWS Cloud
-• Provides complete control over the virtual networking environment
-including selection of IP ranges, creation of subnets, and configuration of
-route tables and gateways
-• You can launch your AWS resources, such as Amazon EC2 instances, into
-your VPC
-
-
+当你创建一个VPC时,你必须声明IP和子网
 
 When you create a VPC, you must specify a range of IPV4 addresses for the VPC in the form of a Classless Inter-Domain
 Routing (CIDR) block; for example, 10.0.0.0/16
@@ -77,12 +71,11 @@ Routing (CIDR) block; for example, 10.0.0.0/16
 • A VPC spans all the Availability Zones in the region
 • You have full control over who has access to the AWS resources
 inside your VPC
-• By default you can create up to 5 VPCs per region
+AWS中一个Regiin 下默认可以创建5个VPC
 • A default VPC is created in each region with a subnet in each AZ
 
-
 ### 推荐设置
-• CIDR block size can be between /16 and /28
+• CIDR 的大小最好在 /16 和 /28 之间,修改这个会话费很长时间
 • The CIDR block must not overlap with any existing CID block
 that's associated with the VPC
 • You cannot increase or decrease the size of an existing CIDR
@@ -106,8 +99,7 @@ This is across all VPCS in all Regions/accounts you want to connect
 Avoid overlapping (IDR blo as much as possible!
 
 ### Credit VPC
-点点点
-
+点点点, 按照提示点就可以了,当然也可以尝试使用terrorform.
 
 可以通过 AWC CLI ec2 发布到指定网络.
 ```
@@ -117,10 +109,11 @@ aws ec2 run-instances --image-id<> -instance-type<>  --security-group-ids<au> --
 ### Security Group and Network ACL
 
 Network ACL (Network Access Control) 在 子网中过滤流量 ,答到访问控制的效果.
-
 需要控制 inbound/outbound 的规则.
-
 Security Group 则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多.
+
+一个典型的VPC设置:
+![vpc class](../assets/aws_vpc.png)
 
 
 ### VPC Peering
@@ -153,8 +146,6 @@ Set up budget
 没有预算可还行.
 
 MFA
-
-
 
 
 

@@ -3,11 +3,12 @@
 
 ### TCP 3 次握手 建立tcp连接
 
-you: syn ---> Sever
-
-you: <----- Sever : syn,ack
-
-you: ---> Server : syn
+```mermaid
+   sequenceDiagram
+      Server->>+Client: Syn
+      Client->>+Server: Syn ,ack
+      Server->>+Client: Syn
+```
 
 192.168.1.2:8080 其中IP 指出了电脑, Port 指出那个application
 
@@ -19,10 +20,16 @@ tcp [keep alive] 数据包
 
 ### TCP 4次握手 , 断开的过程
 
-your fin---->  Sever
-you  <---- Data ack Sever
-you  <----fin Server
-you  ack --> Sever
+
+```mermaid
+   sequenceDiagram
+      Server->>+Client: fin
+      Client-->>-Server: Data ,ack
+      Server->>+Client: fin
+      Client-->>-Server: ack
+
+```
+
 
 ### TCP Segment Format
 
