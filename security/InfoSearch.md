@@ -92,7 +92,7 @@ whois baidu.com
 
 Hping3 ,Fping 命令
 
-
+
 Meltgo 收集子域名信息
 
 ​        强大的社工工具.
@@ -249,6 +249,11 @@ net time
 
 ### 工具 NTscan
 
+## Regcon NG 信息收集工具
+模块多样.内部集成了数据库,还可以生成框架.
+
+
+
 ### windows 中的 任务计划
 
 远程连接 一台电脑 :
@@ -282,7 +287,8 @@ Ettercap 工具
 
 [GitHub - Mebus/cupp: Common User Passwords Profiler (CUPP)](https://github.com/Mebus/cupp)
 
-​ Regcon NG 信息收集工具
+
+
 
 exif 图片信息收集
 

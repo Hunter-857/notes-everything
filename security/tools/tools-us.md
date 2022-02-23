@@ -26,7 +26,18 @@ get you location by Sample Social Engineer
 2. GSP信息,通过钓鱼网站 : https://github.com/thewhiteh4t/seeker , 这样就可以知道一个人所在的经度和纬度.
 
 
-https://jubt.live/cn/index.html
+clearbot
+ 
+https://phonebook.cz
+
+emailhippo
+
+
+[神奇的网站](https://jubt.live/cn/index.html)
+
+
+<img width="1124" alt="screen shot" src="https://user-images.githubusercontent.com/12094603/154958717-4877e1b7-ffa3-4117-9464-f77ad317bff4.png">
+
 
 
 
