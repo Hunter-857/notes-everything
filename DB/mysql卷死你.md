@@ -45,9 +45,9 @@ SERIALIZEABLE (可以串行化)不同的情况下出现 脏读,幻读,不可重�
 
 ### mysql执行计划怎么看
 
-```svg
-explian SQL
-```
+  ```svg
+  explian SQL
+  ```
 
 ## SQL调优
 
