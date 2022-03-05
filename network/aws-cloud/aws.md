@@ -26,18 +26,18 @@
 
     ```
 
-## Terrform   
+## Infostruct as Code
+IaC 是架构的蓝图,帮助你简单方便的管理aws架构.
+ ### 介绍 terraform
  [官网](https://www.terraform.io/)     
- ### 介绍
- 一门脚本语言, 目的是 Infostruct as language(架构作为语言), 简单地说在使用aws的各种组件时一步一步的点击,一步步配置时间久了大家都记不住,所以搞成一些脚本,自己定义比变量,定义组件名字等. 统一管理方便快捷,高端大气有格调.
+ 一门脚本语言, 目的是 Infostruct as Code(架构作为代码), 简单地说在使用aws的各种组件时一步一步的点击,一步步配置时间久了大家都记不住,所以搞成一些脚本,自己定义比变量,定义组件名字等. 统一管理方便快捷,高端大气有格调.
  [下载地址](https://www.terraform.io/downloads)
  ### 实践
  没什么废话就是,一个地址告诉这东西怎么用:[教程](https://learn.hashicorp.com/collections/terraform/aws-get-started)
-
  大概步骤:
-
- ![terraform](../assets/aws_terraform.png)
-
+ ![terraform](../../assets/aws_terraform.png)=
+### AWS CloudFormation and AWS Cloud Development kit
+除了Terroaform ,aws也提供了2中工具
 
 
 ## AWS IAM USER
@@ -51,17 +51,7 @@ IAM 里可以配置用户组,没个组有一定的权限.
 ## AWS MFA
 有点像游戏里的第三方密钥.手机扫了一下二维码就会给你一个二层密码. 公司的账户用不到. 自己账户才会用到
 
-
-计算网络: 
-
-操作系统:
-
-数据结构:
+## AWS 图标
+设计架构需要一些图标可以在这里下载 [aws icon](https://aws.amazon.com/cn/architecture/icons/)
 
 
-区块链:
-    密码学
-         RSA --> 不可逆转 
-         DH    
-
-analogous to having you own data center inside aws   

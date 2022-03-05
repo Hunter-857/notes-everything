@@ -17,8 +17,7 @@ Region: 是指在页面上选择的地区,香港,华南,华北,纽约什么的�
 一个Region下可以有多个VPC,也可以只有一个.(这完全和钱有关...)
 在VPC中可以设置私有subnet 或者公共有subnet.
 公网和私网之前要通过路由来通信,需要配置Route map.只有公共subnet 才有公网IP ,才能访问外网.
-也可以是多个 vpc
-![VPC](../assets/vpc.png) 
+也可以是多个 vpc![VPC](../assets/vpc.png) 
 
 ### CIDR and subnet:
 当你创建一个VPC时,你必须声明IP和子网
@@ -34,12 +33,11 @@ AWS中一个Regiin 下默认可以创建5个VPC
 
 ### 推荐设置
 • CIDR 的大小最好在 /16 和 /28 之间,修改这个会话费很长时间
-• The CIDR block must not overlap with any existing CID block
-that's associated with the VPC
-• You cannot increase or decrease the size of an existing CIDR
-block
-• The first four and last IP address are not available for use
-• AWS recommend you use CID blocks from the FC 1918
+• CIDR 块不得与与 VPC 关联的任何现有 CID 块重叠
+• 现有的CIDR网络是不能增加或减少网络里设备总数的,所以在设置开始时就应该保证足够大
+• 第一个和最后一个IP你自己不能使用,他预留给了aws
+• AWS的网络设置参考了[RFC1918](https://datatracker.ietf.org/doc/html/rfc1918)
+
 ranges:
 | RFC 1918 Range                                  | Example CIDR Block                                          | 
 | ----------------------------------------------- | ----------------------------------------------------------- | 
@@ -92,4 +90,4 @@ aws client vpn
 - Create VPC Flow Logs: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=2h04m55s
 
 
-可以配置路由
+可以配置路由Route Map 53
