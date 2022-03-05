@@ -1,3 +1,14 @@
+<p align="center">
+    <a href="https://dunwu.github.io/javacore/#/" target="_blank" rel="noopener noreferrer">
+        <img src="https://raw.githubusercontent.com/dunwu/images/master/common/dunwu-logo-200.png" alt="logo" width="150px"/>
+    </a>
+</p>
+
+<p align="center">
+    <img src="https://badgen.net/github/license/dunwu/blog" alt="license">
+    <img src="https://travis-ci.com/dunwu/blog.svg?branch=master" alt="build">
+</p>
+
 # notes_everything
 
 #### 介绍
