@@ -9,8 +9,8 @@
   table td{
       text-align: center
   }
-
 </style>
+
 ## Network
 
 以前是7 层模型,  后来被4层模型取代了
@@ -269,3 +269,9 @@ encapsulate
 representation big endian or little endian
 
 
+
+Command 
+
+airmon-ng
+
+airmon-ng start InterfacName

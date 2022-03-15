@@ -1,6 +1,7 @@
 # AWS
 
 公司最近开始在使用AWS我在这里记录一下每天使用的过程那么公司最近开始在使用AWS我在这里记录一下每天使用的过程.
+[AWS官方文档](https://docs.aws.amazon.com/)在这里,他可以方便的我们快速查阅用的服务手册.遇到问题能够快速查阅手册才是最快速的方法
 
 ## AWS CLI
  
@@ -36,7 +37,8 @@ IaC 是架构的蓝图,帮助你简单方便的管理aws架构.
  没什么废话就是,一个地址告诉这东西怎么用:[教程](https://learn.hashicorp.com/collections/terraform/aws-get-started)
  大概步骤:
  ![terraform](../../assets/aws_terraform.png)=
-### AWS CloudFormation and AWS Cloud Development kit
+
+AWS CloudFormation and AWS Cloud Development kit
 除了Terroaform ,aws也提供了2中工具
 
 

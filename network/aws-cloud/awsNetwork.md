@@ -1,11 +1,20 @@
 # Aws Global Infrostruct
-## Region
+[AWS全球基础设施](https://aws.amazon.com/cn/about-aws/global-infrastructure/): AWS 云现已在全球 25 个地理区域内运营着 81 个可用区，并宣布计划在澳大利亚、印度、印度尼西亚、以色列、西班牙、瑞士和阿拉伯联合酋长国 (UAE) 新增 21 个可用区和 7 个 AWS 区域。
+
+## Region and Avaliable Zone
+[区域和可用区](https://aws.amazon.com/cn/about-aws/global-infrastructure/regions_az/?p=ngi&loc=2)
+这里列出列了区域和可用区,在选择区域(Region)是 应该按照业务量,就近的选择区域,如果客户在香港多就选亚洲的Region,如果多数在美国就选择美国的Region
+一个Region 一般包括3个Avaliable Zone就相当于三个数据中心,他们之间的距离在100km内.
+### Global Service and Regional
+在清楚了区域之后,我们需要明确aws提供了2种不同类型的服务,Global Service: Amazon S3,CloudFound, IAM,Route53.
+Regional Service: lambda.
+
 
 ### AWS VPC
 https://www.youtube.com/watch?v=g2JOHLHh4rI
 最主要的还是可以看[官网](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)的文档介绍
 
-在使用VPC 之前,我们需要了解一些基本的网络协议 [IPV4](../network/networkLayer.md) ,不能对地址路由这些东西,一脸懵逼.
+在使用VPC 之前,我们需要了解一些基本的网络协议 [IPV4](../../network/networkLayer.md) ,不能对地址路由这些东西,一脸懵逼.
 
 
 
@@ -17,7 +26,7 @@ Region: 是指在页面上选择的地区,香港,华南,华北,纽约什么的�
 一个Region下可以有多个VPC,也可以只有一个.(这完全和钱有关...)
 在VPC中可以设置私有subnet 或者公共有subnet.
 公网和私网之前要通过路由来通信,需要配置Route map.只有公共subnet 才有公网IP ,才能访问外网.
-也可以是多个 vpc![VPC](../assets/vpc.png) 
+也可以是多个 vpc![VPC](../../assets/vpc.png) 
 
 ### CIDR and subnet:
 当你创建一个VPC时,你必须声明IP和子网
@@ -69,7 +78,7 @@ Network ACL (Network Access Control) 在 子网中过滤流量 ,答到访问控�
 Security Group 则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多.
 
 一个典型的VPC设置:
-![vpc class](../assets/aws_vpc.png)
+![vpc class](../../assets/aws_vpc.png)
 
 
 ### VPC Peering
