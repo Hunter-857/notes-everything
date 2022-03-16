@@ -1,16 +1,3 @@
-<style>
-  table{
-      border: 1px;
-      min-width: 100px;
-  }
- table tr{
-     width: 400px;
-  }
-  table td{
-      text-align: center
-  }
-</style>
-
 ## Network
 
 以前是7 层模型,  后来被4层模型取代了

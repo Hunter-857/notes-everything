@@ -4,12 +4,17 @@ Dynamic HOST .. Protrool
 局域网DHCP 为客户机提供IP
 
 client  ----discover----- > sever
-
 client  <-----offer-----  sever  offer(中有一些租约地址)
-
 client  ----request-----> sever
-
 client  <-----ack----- sever
+
+```mermaid
+   sequenceDiagram
+      client->>+Sever: discover
+      Client->>+Server: offer 
+      Client->>+Server: request 
+      Server->>+Client: ack
+```
 
 ##  HTTP 和 HTTPS协议
 
@@ -22,7 +27,7 @@ client 和 server 之前的认证协议
 
 ## NFS 网络文件系统
 DNFS 分布式网络文件系统(hadoop)
-
+stamp.io
 ## E-mail 
   
   SMTP(默认port: 25)
