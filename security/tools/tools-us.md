@@ -36,6 +36,31 @@ emailhippo
 [神奇的网站](https://jubt.live/cn/index.html)
 
 
+
+
+彩虹屁语音: https://github.com/SaekiRaku/vscode-rainbow-fart
+
+vs 插件开发介绍:  https://blog.csdn.net/weixin_33809981/article/details/93922280
+freelance指导:   https://www.youtube.com/watch?v=4TIvB8zDFio
+
+======================
+infamouse dread pirate 
+fraudulent activity
+mobile trail 
+
+1. acquiring the hacking machine uesed to fradulent offensive activities  也就是拿到肉鸡
+2. buy a laptop which in a privacy focused crypto currency, install a liveOS which will no permanent Storage 
+   also make sure full disk encryption 
+   https://tails.boum.org/   保护隐私的linux 系统
+   ip link -v show  # 显示硬件信息, 通过一些程序修改
+   VPN 代理,等方式隐藏IP
+   # 在这里设置一些 代理
+   vi /etc/proxychains4.conf 
+   tor start 
+   proxychains firefox www.baidu.com
+3. DNScat 修DNS  https://github.com/iagox86/dnscat2
+
+
 <img width="1124" alt="screen shot" src="https://user-images.githubusercontent.com/12094603/154958717-4877e1b7-ffa3-4117-9464-f77ad317bff4.png">
 
 
