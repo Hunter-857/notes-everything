@@ -35,7 +35,7 @@ emailhippo
 
 [神奇的网站](https://jubt.live/cn/index.html)
 
-
+web3 解释 https://www.youtube.com/watch?v=nHhAEkG1y2U
 
 
 彩虹屁语音: https://github.com/SaekiRaku/vscode-rainbow-fart
@@ -59,7 +59,6 @@ mobile trail
    tor start 
    proxychains firefox www.baidu.com
 3. DNScat 修DNS  https://github.com/iagox86/dnscat2
-
 
 <img width="1124" alt="screen shot" src="https://user-images.githubusercontent.com/12094603/154958717-4877e1b7-ffa3-4117-9464-f77ad317bff4.png">
 
