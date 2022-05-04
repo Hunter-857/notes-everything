@@ -19,20 +19,21 @@
    随着移动互联网的发展联网设备越来越多, IPv4 的地址用完了,现在已经逐步转向IPV6
 
 3. CName Record
-    These records resolve to another domain name, for example, TryHackMe's online shop has the subdomain name store.tryhackme.com which returns a CNAME record shops.shopify.com. Another DNS request would then be made to shops.shopify.com to work out the IP address.
+    这些记录解析到另一个域名，例如 TryHackMe 的网店有子域名 store.tryhackme.com，它返回一个 CNAME 记录 shop.shopify.com。 然后将向 shop.shopify.com 发出另一个 DNS 请求以计算出 IP 地址。
 
 4. MX Record
-   
-   MX记录了地址服务器
-   These records resolve to the address of the servers that handle the email for the domain you are querying, for example an MX record response for tryhackme.com would look something like alt1.aspmx.l.google.com. These records also come with a priority flag. This tells the client in which order to try the servers, this is perfect for if the main server goes down and email needs to be sent to a backup server.
+  MX记录了地址服务器
+  这些记录解析为处理您正在查询的域的电子邮件的服务器的地址，例如，tryhackme.com 的 MX 记录响应看起来像 alt1.aspmx.l.google.com。 这些记录还带有优先级标志。 这告诉客户端以什么顺序尝试服务器，如果主服务器出现故障并且需要将电子邮件发送到备用服务器，这是完美的。
 
 5. TXT Record
    
-     TXT records are free text fields where any text-based data can be stored. TXT records have multiple uses, but some common ones can be to list servers that have the authority to send an email on behalf of the domain (this can help in the battle against spam and spoofed email). They can also be used to verify ownership of the domain name when signing up for third party services.
+  TXT 记录是可以存储任何基于文本的数据的自由文本字段。 TXT 记录有多种用途，但一些常见的用途是列出有权代表域发送电子邮件的服务器（这有助于打击垃圾邮件和欺骗性电子邮件）。 在注册第三方服务时，它们还可用于验证域名的所有权。
 
-DNS AXFR 协议(https://www.netsh.me/article/computer/dns/1151.html)
+6. AXFR
+   
+   AXFR协议(https://www.netsh.me/article/computer/dns/1151.html)
 
-1. 连接域名解析的过程
+7. 连接域名解析的过程
    
    ```
        nslookup  www.baidu.com
@@ -40,7 +41,7 @@ DNS AXFR 协议(https://www.netsh.me/article/computer/dns/1151.html)
        set type 
    ```
 
-2. dig命令
+8. dig命令
    
    ```
    # dig 也可以反向查询 , 查询到 PTR 记录
