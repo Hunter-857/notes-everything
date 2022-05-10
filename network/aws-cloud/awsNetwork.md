@@ -11,15 +11,12 @@ Regional Service: lambda.
 
 
 ### AWS VPC
-https://www.youtube.com/watch?v=g2JOHLHh4rI
 最主要的还是可以看[官网](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)的文档介绍
-
 在使用VPC 之前,我们需要了解一些基本的网络协议 [IPV4](../../network/networkLayer.md) ,不能对地址路由这些东西,一脸懵逼.
 
-
-
 ### 概念
-VPC: 是你在AWS的虚拟网络,就像是在aws的虚拟数据中心,它可以分配和隔绝不同云主机. 为你提供整个网络控制权限,包括了IP ,子网划分,route table 和 gateways 配置,之后你就在可以在你的VPC中启动 EC2 实例,云函数,Dynamic DB 等.
+VPC: 是你在AWS的虚拟网络,就像是在aws的虚拟数据中心,它可以分配和隔绝不同云主机. 
+为你提供整个网络控制权限,包括了IP ,子网划分,route table 和 gateways 配置,之后你就在可以在你的VPC中启动 EC2 实例,云函数,Dynamic DB 等.
 
 VPC的核心内容:
 Region: 是指在页面上选择的地区,香港,华南,华北,纽约什么的都有,我们在一个 Region下可以配置VPC.
@@ -28,17 +25,13 @@ Region: 是指在页面上选择的地区,香港,华南,华北,纽约什么的�
 公网和私网之前要通过路由来通信,需要配置Route map.只有公共subnet 才有公网IP ,才能访问外网.
 也可以是多个 vpc![VPC](../../assets/vpc.png) 
 
-### CIDR and subnet:
-当你创建一个VPC时,你必须声明IP和子网
+### CIDR And Subnet:
+当你创建一个VPC时,你必须声明IP和子网:
 
-When you create a VPC, you must specify a range of IPV4 addresses for the VPC in the form of a Classless Inter-Domain
-Routing (CIDR) block; for example, 10.0.0.0/16
-
-• A VPC spans all the Availability Zones in the region
-• You have full control over who has access to the AWS resources
-inside your VPC
-AWS中一个Regiin 下默认可以创建5个VPC
-• A default VPC is created in each region with a subnet in each AZ
+* 子网的数量是有限的所以要确保子网够用
+* 考虑一个网络里一个application
+* 考虑不同区域间的高可用(HA)
+* VPC之间不要重叠
 
 ### 推荐设置
 • CIDR 的大小最好在 /16 和 /28 之间,修改这个会话费很长时间
@@ -53,34 +46,61 @@ ranges:
 | 10.0.0.0 - 10.255.255.255 (10/8 prefix)         | Your VPC must be /16 or smaller, for example, 10.0.0.0/16   | 
 | 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)  | Your VPC must be /16 or smaller, for example, 172.31.0.0/16 | 
 | 192.168.0.0-192.168.255.255 (192.168/16 prefix) | Your VPC can be smaller, for example 192.168.0.0/20(4)      | 
+  
 
-Ensure you have enough networks and hosts
-Bigger CIDR blocks are typically better(more flexibility)
-Smaller subnets are OK for most use cases
-Consider deploying application tiers per subnet
-Split your HA resources across subnets in different AZS
-VPC Peering requires non-overlapping CIDR blocks
-This is across all VPCS in all Regions/accounts you want to connect
-Avoid overlapping (IDR blo as much as possible!
+• A VPC spans all the Availability Zones in the region
+• You have full control over who has access to the AWS resources
+inside your VPC
+AWS中一个Regiin 下默认可以创建5个VPC
+• A default VPC is created in each region with a subnet in each AZ
+
+Routing (CIDR) block; for example, 10.0.0.0/16
+![aws](../../assets/aws_cidr_block.png)255-->/8 
+
+### IPV4 Subnet Creator 
+[Tool Collection](https://network00.com)
+
+[IPV4 Subnet Create](https://network00.com/NetworkTools/IPv4SubnetCreator/)
+
+Aws 提供了 vpc wizard
 
 ### Credit VPC
-点点点, 按照提示点就可以了,当然也可以尝试使用terrorform.
+点点点, 按照提示点就可以了
 
-可以通过 AWC CLI ec2 发布到指定网络.
-```
-aws ec2 run-instances --image-id<> -instance-type<>  --security-group-ids<au> --subnet-id<> -key-name<>  --user-data<>
-```
+1. create vpc
+2. create public subnet and private subnet
+3. create Route Table
+   private Route Table for private subnet
+   ![aws route table](../../assets/aws_private_route_table.png)
+   public  Route Table for public subnet
+   public  subnet need to assign ip
+   ![aws route table](../../assets/aws_routes_table.png)
+4. create Internet Getway
 
-### Security Group and Network ACL
+#### NAT GateWay
+NAT GateWay must in public subnet
 
-* Network ACL (Network Access Control) 
-Network ACL (Network Access Control) 在子网中过滤流量 ,答到访问控制的效果.
-需要控制 inbound/outbound 的规则.
-Security Group则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多.
+
+#### Security Group and Network ACL
+
+Network ACL (Network Access Control) 在子网中过滤流量 ,答到访问控制的效果. 是一种无状态的防火墙
+
+Security Group则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多. 则是由状态的防火墙
 
 一个典型的VPC设置:
 ![vpc class](../../assets/aws_vpc.png)
 * Configure Security Groups and NACLs
+
+#### EC2 In VPC
+
+当然也可以尝试使用terrorform.
+可以通过 AWC CLI ec2 发布到指定网络.
+
+```shell
+  aws ec2 run-instances --image-id<AMI-id> -instance-type<>  --security-group-ids<security-group-id> --subnet-id<> -key-name<> 
+  --user-data file://<filePath>
+
+```
 
 
 ### VPC Peering
