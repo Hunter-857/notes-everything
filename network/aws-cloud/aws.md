@@ -36,7 +36,7 @@ IaC 是架构的蓝图,帮助你简单方便的管理aws架构.
  ### 实践
  没什么废话就是,一个地址告诉这东西怎么用:[教程](https://learn.hashicorp.com/collections/terraform/aws-get-started)
  大概步骤:
- ![terraform](../../assets/aws_terraform.png)=
+ ![terraform](../../assets/aws_terraform.png)
 
 AWS CloudFormation and AWS Cloud Development kit
 除了Terroaform ,aws也提供了2中工具

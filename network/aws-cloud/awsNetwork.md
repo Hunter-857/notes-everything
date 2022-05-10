@@ -73,12 +73,14 @@ aws ec2 run-instances --image-id<> -instance-type<>  --security-group-ids<au> --
 
 ### Security Group and Network ACL
 
-Network ACL (Network Access Control) 在 子网中过滤流量 ,答到访问控制的效果.
+* Network ACL (Network Access Control) 
+Network ACL (Network Access Control) 在子网中过滤流量 ,答到访问控制的效果.
 需要控制 inbound/outbound 的规则.
-Security Group 则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多.
+Security Group则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多.
 
 一个典型的VPC设置:
 ![vpc class](../../assets/aws_vpc.png)
+* Configure Security Groups and NACLs
 
 
 ### VPC Peering

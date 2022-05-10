@@ -11,18 +11,21 @@ ASG
 RD5 multi-az
 ## High Durability (耐久性)
 
-CloudEndure Disaster Recovery
 
-计算网络: 
+## ECS and ECR
+### ECS (Elastic Container Service)
 
-操作系统:
+容器服务简单来说就是给提供了可以run 容器的地方
 
-数据结构:
+### ECR (Elastic Container Register)
+存储docker img的地方.
 
+### CodeBulid and Pipeline
+理由Codebulid run dockerfile文件
 
-区块链:
-    密码学
-         RSA --> 不可逆转 
-         DH    
+构建aws Pipeline 的地方
+
+## CloudEndure Disaster Recovery
+
 
 analogous to having you own data center inside aws   

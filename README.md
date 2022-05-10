@@ -19,8 +19,6 @@
 
  随心而为, 随意而录
 
-[CS-Notes](http://www.cyc2018.xyz/)
-
 #### 使用说明
 
  大家卷起来.
@@ -30,3 +28,4 @@
     大家随缘
 
 ![公众号](assets/qrcode.jpg)
+[CS-Notes](http://www.cyc2018.xyz/)

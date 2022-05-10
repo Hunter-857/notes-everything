@@ -37,3 +37,7 @@ stamp.io
   读邮件  IMAP 
 
 FFV window 下一个文件格式识别工具 ,通过查看图片头.
+
+## DNS 服务器
+### CName 
+### ARecord 

@@ -1,17 +1,20 @@
 # ROS
 ROS 系统介绍
-ROS 设计的特点
-1.点对点的设计
-    点对点通信
-2.多语言支持
-3.架构 精简,集成度高
-4.组件化工具包丰富
-  3D可视化--rviz
-  物理仿真 -- gazebo
-  数据记录工具 -- rosbag
-  Qt工具箱 --- rqt_*
-5.免费且开源
+
+ROS 设计的特点:
+  1. 点对点的设计
+      点对点通信
+  2. 多语言支持
+  3. 架构 精简,集成度高
+  4. 组件化工具包丰富
+      3D可视化--rviz
+      物理仿真 -- gazebo
+      数据记录工具 -- rosbag
+      Qt工具箱 --- rqt_*
+  5. 免费且开源
+   
 [Tutorials](https://docs.ros.org/en/galactic/Tutorials.html)
+
 ## 
 三个层次
 开源社区
@@ -61,9 +64,6 @@ rossevice list
  一个终端: roscore
  一个终端: rosrun tutlesim tutlesim_node
  一个终端: rosrun tutlesim tutlesim_teleop_key
-
-
-
 
 
 资料

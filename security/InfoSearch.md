@@ -29,11 +29,14 @@
    
   TXT 记录是可以存储任何基于文本的数据的自由文本字段。 TXT 记录有多种用途，但一些常见的用途是列出有权代表域发送电子邮件的服务器（这有助于打击垃圾邮件和欺骗性电子邮件）。 在注册第三方服务时，它们还可用于验证域名的所有权。
 
-6. AXFR
+6. SOA Record
+   
+  
+7. AXFR
    
    AXFR协议(https://www.netsh.me/article/computer/dns/1151.html)
 
-7. 连接域名解析的过程
+8. 连接域名解析的过程
    
    ```
        nslookup  www.baidu.com
@@ -41,7 +44,7 @@
        set type 
    ```
 
-8. dig命令
+9.  dig命令
    
    ```
    # dig 也可以反向查询 , 查询到 PTR 记录
