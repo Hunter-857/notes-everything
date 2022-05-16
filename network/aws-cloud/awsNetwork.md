@@ -84,9 +84,8 @@ NAT GateWay must in public subnet
 #### Security Group and Network ACL
 
 Network ACL (Network Access Control) 在子网中过滤流量 ,答到访问控制的效果. 是一种无状态的防火墙
-
 Security Group则是在ec2之前控制访问权限. 就是一些端口配置感觉各种云服务都差不多. 则是由状态的防火墙
-
+ACL的规则设置顺序,可以按照规则number的大小,数字小的先执行
 一个典型的VPC设置:
 ![vpc class](../../assets/aws_vpc.png)
 * Configure Security Groups and NACLs
@@ -104,13 +103,22 @@ Security Group则是在ec2之前控制访问权限. 就是一些端口配置感�
 
 
 ### VPC Peering
+通过IPV4 ,IPV6 地址,连接不同地方的 VPCs,可以是同一个region下的,也可以不在同一个Region,甚至可以不在同一个账号里.
 
-连接IPV4 ,IPV6 在不同协议下的VPCs.
-可以是同一个 region 下的,
-vpc endpionts
+how to config
 
-aws client vpn
-- Create VPC EndPoint: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h26m41s
+VPC -> Peering Connections -> Create peering connection
+
+### VPC Endpoints
+
+### VPN client 
+aws side to side vpn
+
+AWS VPN CloudHub
+
+aws vpc connect to remote customer office
+each office has BGP ASN
+
 - AWS Client VPN: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h36m55s
 - AWS Site-to-Site VPN: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h39m43s
 - AWS VPN CloudHub: https://www.youtube.com/watch?v=g2JOHLHh4rI&t=1h41m51s
