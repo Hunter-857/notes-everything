@@ -13,6 +13,15 @@ Security e-book :https://github.com/Hack-with-Github/Free-Security-eBooks
 | 深信服       | https://security.sangfor.com.cn/         |  传统安全企业                      |
 
 
+# 漏洞库
+CNNVD: www.cnnvd.org.cn
+CNVD:www.cnvd.org.cn
+scap中文社区:www.scap.org.cn
+
+CVE
+NVD
+SecurityFocus
+OSVDB
 # tips
 https://evilcos.me/security_skill_tree_basic/index.html
 
