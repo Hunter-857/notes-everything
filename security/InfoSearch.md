@@ -199,9 +199,9 @@ man n
 ```
 
 ```
- #nc Telnet/Banner
+ [[nc]] Telnet/Banner
  nc -nv ip port
- #扫描 一定范围内的端口
+ [[扫描]] 一定范围内的端口
  nc -nvz ip  1-2048  # tcp 协议
  nc -nvzu ip  1-2048 # upd 协议
  # exmaple
@@ -220,7 +220,7 @@ Server A : nc -ip 333 >1.mp4   # file name
 #  另外一台电脑B 上接收
 Server B : nc -nv 1.1.1.1 333 < 1.mp4 -q 1 
 
-#甚至可以克隆 整个硬盘
+[[甚至可以克隆]] 整个硬盘
 nc -lp 333 | dd of=/dev/sda # 硬盘搞成输出流
 dd if=/dev/sda | nc -nv 1.1.1.1 333 -q l # 读入标准流
 ```
