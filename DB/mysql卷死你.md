@@ -6,7 +6,21 @@
 
 ### mysql索引的基本原理
 
-数据结构 B+Tree
+数据结构:
+     二叉树
+     哈希表
+     红黑树(二叉平衡数)
+     BTree
+     B+Tree
+各种数据结构的优缺点
+
+```js
+//innodb 索引页大小 大约16KB
+SHOW CLOBAL STATUS like ‘innodb_page_size’
+
+```
+
+索引最左原则
 
 ### mysql聚簇索引和非聚簇索引的区别?
 
@@ -86,6 +100,10 @@ mysql面试常见点--mysql集群
  innodb和myisam区别
 mysql面试题--索引分类
 mysql面试题--innodb的底层数据结构
+
+Innodb 文档 https://dev.mysql.com/doc/refman/8.0/en/innodb-storage-engine.html
+
+
 mysql面试题性能监控
 schema和数据类型优化
  执行计划
@@ -99,7 +117,19 @@ mysql主从复制原理
 mysql读写分离
  事务的特点
 事务的实现机制
- 什么是MVCC
+
+什么是MVCC
+
+MVCC 机制主要依赖于记录中的三个隐藏字段, undolog,read view 来实现
+
+  DB_TRX_ID
+  最近修改的事务id   
+   1,2,3 代表查询 ,4 代表Update
+  DB_ROLL_PTR
+  7b 回滚指针
+  DB_ROW_ID
+  6b, 隐藏主键
+
 MYSQL的锁机制实现
 mysql为什么要存在索引系统
 mysql索引应该如何设计
@@ -109,7 +139,14 @@ mysql索引的分类
 详解mysql的最左匹配和索引下推
 如何优雅的回答nysql索引面试题
 mysql的索引原理和数据结构能介绍下吗
+
 B+树跟B树的区别是什么
+  结构不同
+
 mysql聚簇索引和非聚簇索引的区别
+  index存储的位置不同
+
+
 使用mysql索引都有什么原则
 如何处理mysql的慢查询
+
