@@ -152,7 +152,7 @@ publish channel1 test
 
 ```
 
-## Jedis 操作redis
+## Jedis操作redis
 
 ### 引入依赖
 
@@ -167,8 +167,72 @@ publish channel1 test
 ```
 ### 常见操作
 
+```java
+  
+  public static void redisDemo(){
+      Jedis jedis = new Jedis("127.0.0.1", 6379);
+      Set set = jedis.keys("*");
+      set.forEach(o -> System.out.println(o));
+      List list = jedis.lrange("k1",0 ,-1);
+      System.out.println(list);
+      jedis.close();
+  }
+
+```
+
 ### 整合到SpringBoot
 
+### Redies 中的事务
+每个事务有隔离性 
+* Multi
+* Exec
+* discard
+组队, 执行,discard 放弃组队
+
+组队时 可能错误
+执行时 可能错误
+#### 事务冲突的问题
+并发的情况下回出现问题
+解决的方案:
+* 悲观锁
+
+* 乐观锁
+  使用方法
+  whach[key] 
+  unwhach
+### Redis 持久化
+
+#### RDB
+在指定的时间间隔内将数据数据写入,磁盘
+新建 子线程 fork
+
+采用了linux 写时复制
+
+config file 中的 SNAPSHOTTING 相关的配置
+
+```
+# 文件名字
+dbfilename dump.rdb
+#当前路径
+dir ./
+```
+
+
+#### AOF
+append only file,以日志的形式记录下来写操作.
+默认没有开启
+
+启动路径在配置文件 redis.conf 中, 默认为 appendonly.aof
+
+如果遇到异常, 可以通过 
+```shell
+redis-check-aof --fix appendonly.aof
+```
+配置同步频率
+
+appendfsync always
+appendfsync everysec  
+appendfsync no
 
 
 2.redis面试吊打面试官秘籍
