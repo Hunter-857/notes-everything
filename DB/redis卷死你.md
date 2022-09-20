@@ -138,14 +138,12 @@ georadius <key> <longitude><latitude> radius [m|km|ft(英尺)|mi(英里)]
 ## Redis的发布和订阅
 redis  发布订阅(pub/sub) 是一种消息通信模式: 发布者(pub) 发送消息,订阅者(sub)接收消息
 
-客户端可以订阅频道.
-发布者 发布消息到频道
+客户端可以订阅频道.发布者 发布消息到频道
 
 ```
 
 ## 订阅
 subscribe channel1
-
 
 #发布消息去 test
 publish channel1 test
@@ -199,10 +197,10 @@ publish channel1 test
 * 乐观锁
   使用方法
   whach[key] 
-  unwhach
-### Redis 持久化
+  unwhach 
 
-#### RDB
+## Redis 持久化
+### RDB
 在指定的时间间隔内将数据数据写入,磁盘
 新建 子线程 fork
 
@@ -217,8 +215,7 @@ dbfilename dump.rdb
 dir ./
 ```
 
-
-#### AOF
+### AOF
 append only file,以日志的形式记录下来写操作.
 默认没有开启
 
@@ -233,6 +230,84 @@ redis-check-aof --fix appendonly.aof
 appendfsync always
 appendfsync everysec  
 appendfsync no
+
+
+## 主从复制
+
+实现读写分离,数据备份
+
+### 搭建
+编写不同端口的启动文件的config文件 
+
+```shell
+pidfile /var/run/redis_6379.pib
+port 6379
+dbfilename dump6379.db
+log  ./6379_log_file.log
+```
+
+查看redis 状态
+```shell
+# 进入 redis
+redis-cli -p 6379
+
+#输入
+info replication
+
+##在从机上输入
+slave of <ip><port>
+
+```
+### 一主多从
+
+### 哨兵模式
+哨兵模式是指若是主服务挂了, 会选择一个从服务,让从服务变成主服务
+
+选择的策略
+
+
+创建文件 sentinel.conf
+```shell
+# sentinel monitor mymaster <ip><port>  nums
+# num 表示需要多少个从节点同意
+sentinel monitor mymaster 127.0.0.1 6379  1
+```
+## 集群搭建
+[Scaling with Redis Cluster](https://redis.io/docs/manual/scaling/)
+[集群搭建](http://www.redis.cn/topics/cluster-tutorial.html)
+
+## 应用问题
+### 缓存穿透
+1. 应用服务器压力变大了
+2. redis 查询命中率低
+3. 一直在查询 mysql
+
+可能是有人在攻击,常见的解决方案
+
+### 缓存击穿
+1. 数据库访问压力瞬间变大
+2. redis 里面没有出现大量key过期
+3. redis 正常运行
+   
+某个key 过期,大量访问这个key
+解决方法:
+  预设一些key
+### 缓存雪崩
+极少时间内大量key 过期了
+解决方法:
+
+### 分布式锁
+
+基于Redis 的分布式锁 
+
+设置锁: setnx
+
+释放锁: del
+
+
+
+
+
 
 
 2.redis面试吊打面试官秘籍
@@ -280,3 +355,6 @@ wc775812
 
 
 https://github.com/CorentinJ/Real-Time-Voice-Cloning 就是拿来用哈哈
+
+Pr0tectamsuser
+All0wdpxuser

@@ -193,72 +193,18 @@ OSPF协议 ：Open Shortest Path First开放式最短路径优先，底层是迪
 
 NAT 服务器 [网络地址转换（NAT）的原理与配置](https://blog.51cto.com/yangshufan/1959448)
 
-
-
-
 RTP 协议 <https://blog.csdn.net/bripengandre/article/details/2238818>
 
-
-
-
 工具:   [kali工具 recon-ng 的被动信息搜集_twowords的博客-CSDN博客](https://blog.csdn.net/Jaasenyi/article/details/107173402)
+
+
+Command 
+airmon-ng
+airmon-ng start InterfacName
 
 
 ### 无线网络
 802.11 标准
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-hypothetical   假想的
-hypothetically 假想滴
-decoupled with  解偶
-wild cards  通配符
-
-partial           部分的
-
-rendezvous  会合
-
-relay
-
-hop                      跳
-corruption      腐败
-
-thin waist
-
-voltage
-
-analogy mode   类比模式
-
-postal service
-
-a bare bone service
-assumption
-concludes
-stuck in a loop
-brown goes to ocean
-controverial and revolutionary idea
-
-assembly code
-encapsulate
-
 representation big endian or little endian
-
-
-
-Command 
-
-airmon-ng
-
-airmon-ng start InterfacName

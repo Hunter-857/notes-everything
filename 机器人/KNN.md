@@ -6,6 +6,10 @@
 
   主要记得KNN和EM的 有一定区别
 
+
+MNist 数据集
+ImageNet 数据集(1000类)
+
 ## 朴素贝叶斯
 
 三门问题
@@ -25,3 +29,12 @@ https://github.com/yusong-shen/mooc_os_lab
 网站推荐 站长之家, zoomeye,shodan
 
 社交账号 上搜索网站 : 微博,知乎,贴吧,freebuf     
+
+
+对类别进行编码
+
+y = [y1,y2.....yn]T
+
+
+
+Pr0tectamsuser

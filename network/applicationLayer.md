@@ -1,17 +1,12 @@
 # 应用层
 ## DHCP 协议
-Dynamic HOST .. Protrool
-局域网DHCP 为客户机提供IP
+Dynamic HOST .. Protrool 局域网DHCP 为客户机提供IP
 
-client  ----discover----- > sever
-client  <-----offer-----  sever  offer(中有一些租约地址)
-client  ----request-----> sever
-client  <-----ack----- sever
 
 ```mermaid
    sequenceDiagram
       client->>+Sever: discover
-      Client->>+Server: offer 
+      Client->>+Server: offer (中有一些租约地址)
       Client->>+Server: request 
       Server->>+Client: ack
 ```
